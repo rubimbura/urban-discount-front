@@ -1,0 +1,89 @@
+/*-------------------------------------------------------
+                          Fonts
+--------------------------------------------------------*/
+@font-face {
+    font-family: 'sofia-light';
+    src: local('☺'), url('../fonts/sofia-pro-light.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'sofia-regular';
+    src: local('☺'), url('../fonts/sofia-pro-regular-az.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'sofia-medium';
+    src: local('☺'), url('../fonts/Sofia-pro-medium.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'sofia-bold';
+    src: local('☺'), url('../fonts/sofia-pro-bold.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'sofia-black';
+    src: local('☺'), url('../fonts/sofia-pro-black.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'sofia-semi-bold';
+    src: local('☺'), url('../fonts/sofia-pro-semi-bold.otf') format('opentype');
+  }
+  
+  
+  $sofia-light: 'sofia-light', sans-serif;
+  $sofia-regular: 'sofia-regular', sans-serif;
+  $sofia-medium: 'sofia-medium', sans-serif;
+  $sofia-bold: 'sofia-bold', sans-serif;
+  $sofia-black: 'sofia-black', sans-serif;
+  $sofia-semi-bold: 'sofia-semi-bold', sans-serif;
+  
+  
+  
+  
+  
+  @font-face {
+    font-family: 'bicyclette-black';
+    src: url('../fonts/bicyclette/Bicyclette-Black.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'bicyclette-bold';
+    src: url('../fonts/bicyclette/Bicyclette-Bold.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'bicyclette-light';
+    src: url('../fonts/bicyclette/Bicyclette-Light.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'bicyclette-regular';
+    src: url('../fonts/bicyclette/Bicyclette-Regular.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: 'bicyclette-thin';
+    src: url('../fonts/bicyclette/Bicyclette-Thin.otf') format('opentype');
+  }
+  @font-face {
+    font-family: 'bicyclette-ultra';
+    src: url('../fonts/bicyclette/Bicyclette-Ultra.otf') format('opentype');
+  }
+  
+  
+  
+  $bicyclette-black: 'bicyclette-black', sans-serif;
+  $bicyclette-bold: 'bicyclette-blod', sans-serif;
+  $bicyclette-light: 'bicyclette-light', sans-serif;
+  $bicyclette-regular: 'bicyclette-regular', sans-serif;
+  $bicyclette-thin: 'bicyclette-thin', sans-serif;
+  $bicyclette-ultra: 'bicyclette-ultra', sans-serif;
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

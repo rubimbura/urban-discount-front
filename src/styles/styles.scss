@@ -1,0 +1,233 @@
+@import 'layouts/fonts';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  font-family: $sofia-regular
+}
+
+.app-container{
+  height: 100vh;
+}
+
+.home-page-container{
+  padding: 30px;
+  height: 100%;
+  box-sizing: border-box;
+  background: #F5F6F8;
+  @media screen and (max-width: 767px) {
+    padding: 0px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    padding: 18px;
+  }
+}
+
+.home-items-container{
+  padding: 32px 98px;
+  box-shadow: 0px 3.5px 5.5px 0px rgba(0, 0, 0, 0.02);
+  border-radius: 24px;
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  box-sizing: border-box;
+  min-height: 100%;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    padding: 24px;
+  }
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    padding: 30px;
+  }
+  .left-section-container{
+    width: 50%;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+  }
+
+  &__logo{
+    padding-bottom: 16px;
+  }
+
+  &__coming-soon-ctn{
+    padding-bottom: 16px;
+    p{
+      color: #656B80;
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: uppercase;      
+    }
+  }
+
+  &__header-text-ctn{
+    padding-bottom: 16px;
+    width: 70%;
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+    @media screen and (min-width: 768px) and (max-width: 1024px) {
+      width: 100%;
+    }
+    span{
+      color: #EB7C0F;
+      font-family: $bicyclette-regular;
+      font-size: 40px;
+      font-weight: 500;
+      margin: 0px !important;
+      padding: 0px !important;
+      line-height: 40px;
+      @media screen and (max-width: 767px) {
+        font-size: 18px;
+        line-height: 24px;
+      }
+      @media screen and (min-width: 768px) and (max-width: 1024px) {
+        font-size: 32px;
+      }
+    }
+  }
+
+  &__content-ctn{
+    padding-bottom: 32px;
+    span{
+      color: #656B80;
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 24px;
+      @media screen and (max-width: 767px) {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+.right-side-image-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50%;
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+}
+
+.text-input-field-component{
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.primary-button-component{
+  border-radius: 8px !important;
+  padding: 16px 16px !important;
+  color: white !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  line-height: 16px !important;
+  text-transform: none !important;
+  margin-bottom: 32px !important;
+  width: 100%;
+}
+
+.primary-button-component:hover{
+  background-color: #EB7C0F !important;
+}
+
+
+
+.count-down-ctn{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 32px;
+  .item-ctn{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     .key{
+      color: #2A2F4E;
+      font-size: 24px;
+      font-family: $sofia-regular;
+      line-height: 24px;
+      @media screen and (max-width: 767px) {
+        font-size: 14px;
+      }
+     }
+     .value{
+      color: #656B80;
+      line-height: 24px; 
+      font-family: $sofia-light;
+      text-transform: uppercase;
+      @media screen and (max-width: 767px) {
+        font-size: 10px;
+      }
+     }
+  }
+}
+
+.home-page-footer-container{
+    // position: absolute;
+    // bottom: 56px;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    margin-top: 24px;
+    @media screen and (max-width: 767px) {
+      bottom: 0;
+      padding-bottom: 18px;
+      padding-top: 32px;
+      position: inherit;
+      margin-top: 0px;
+    }
+    span{
+      color: #656B80;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 24px;
+      text-transform: uppercase;
+    }
+}
+
+.home-page-select-location-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  @media screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+.select-field-component{
+  width: 100%;
+}
+
+.home-page-contact-form {
+  display: flex;
+  flex-direction: column;
+  @media screen and (max-width: 767px) {
+    flex-direction: column-reverse; 
+  }
+}
+
