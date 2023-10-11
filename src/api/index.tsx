@@ -45,4 +45,5 @@ export const {
   useGetDashboardQuery,
   useFetchDistrictsQuery,
   useFetchSectorsQuery,
+  useFetchCountDownQuery,
 } = appApi

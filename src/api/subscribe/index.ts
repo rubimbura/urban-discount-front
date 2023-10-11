@@ -34,6 +34,9 @@ const subscribeEndpoints = (builder: EndpointBuilder<
 
     fetchSectors: builder.query<any, string>({
       query: (id) => `address/${id}`
+    }),
+    fetchCountDown: builder.query<any, any>({
+      query: () => `/basic-settings`
     })
   })
 
