@@ -7,6 +7,7 @@ import { useFetchDistrictsQuery, useFetchSectorsQuery,useSubscribeMutation } fro
 import { SelectChangeEvent } from '@mui/material/Select'
 import { notificationPanel as panelSlice } from '../../slice/NotificiationPanel'
 import {  useDispatch } from 'react-redux'
+import { RwandanFlag } from '../../components/icons'
 
 
 export interface ContactFormValues {
@@ -23,7 +24,7 @@ export default function ContactForm() {
   const [submitMutation, {isLoading, data:addData, error, isError, isSuccess}] = useSubscribeMutation()
   const [values, setValues] = useState<ContactFormValues>({
     names: '',
-    phoneNumber: '250',
+    phoneNumber: '',
     email: '',
     location: ''
   })
@@ -45,7 +46,7 @@ export default function ContactForm() {
     const sectorName = sectors.filter((el: any) => el.id === address.sector)?.[0]?.addressName
     const payload = {
       fullNames: values.names,
-      phoneNumber:values.phoneNumber?.replaceAll(/[^0-9]+/g, ''),
+      phoneNumber:'250'+ values.phoneNumber?.replaceAll(/[^0-9]+/g, ''),
       email: values.email,
       location: `${districtName}/${sectorName}`
     }
@@ -63,6 +64,16 @@ export default function ContactForm() {
     }
 
     if(isSuccess){
+      setValues({
+        names: '',
+        phoneNumber: '',
+        email: '',
+        location: ''
+      })
+      setAddress({
+        district: '',
+        sector:''
+      })
       dispatch(panelSlice({
         type: 'success',
         message: addData?.message  || 'Updated successfully',
@@ -120,6 +131,16 @@ export default function ContactForm() {
     })
   }
 
+  const handlePhoneChange = (phone:string) => {
+    const inputPhoneNumber = phone.replace(/\D/g, '')
+    if(inputPhoneNumber.length < 10){
+      setValues({
+        ...values,
+        phoneNumber: inputPhoneNumber
+      })
+    }
+  }
+
   return (
     <form onSubmit={handleSubmits}>
 
@@ -133,16 +154,22 @@ export default function ContactForm() {
           names: e.target.value
         })}
       />
-       <TextField 
-        label='Phone number'
-        value={values.phoneNumber}
-        required
-        type="tel"
-        onChange={(e:any) => setValues({
-          ...values,
-          phoneNumber: e.target.value
-        })}
-      />
+      <div className='home-page-phonenumber-field'>
+        <div className='country-code-ctn'>
+          <RwandanFlag className='flag-icon'/>
+          <span>+250</span>
+        </div>
+        <div className='mobile-number-ctn'>
+          <TextField 
+            label='Phone number'
+            value={values.phoneNumber}
+            required
+            type="tel"
+            onChange={(e:any) => handlePhoneChange(e.target.value)}
+          />
+        </div>
+      </div>
+
 
       <TextField 
         label='Email'
@@ -172,7 +199,7 @@ export default function ContactForm() {
       </div>
 
       <PrimaryButton 
-        label="Notify me"
+        label="Become a member"
         type="submit"
         disabled={isValid() || isLoading}
         // onClick={handleSUbmit}

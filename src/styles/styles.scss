@@ -161,6 +161,10 @@ body {
   display: flex;
   justify-content: space-between;
   margin-bottom: 32px;
+  margin-top: 30px;
+  @media screen and (max-width: 767px) {
+    margin-top: 0px;
+  }
   .item-ctn{
      display: flex;
      flex-direction: column;
@@ -231,3 +235,37 @@ body {
   }
 }
 
+
+.home-page-phonenumber-field{
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  .country-code-ctn{
+    width: 15%;
+    border-radius: 8px;
+    border: 1px solid #E2E4ED;
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0px 10px;
+    gap: 10px;
+    @media screen and (max-width: 767px) {
+      width: 30%;
+    }
+    .flag-icon{
+      width: 30px;
+      height: 30px;
+    }
+    span{
+      color:#9EA2B3;
+      font-size: 16px;
+      font-family: $sofia-regular;
+    }
+  }
+  .mobile-number-ctn{
+    width: 85%;
+    @media screen and (max-width: 767px) {
+      width: 70%;
+    }
+  }
+}

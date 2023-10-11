@@ -2,12 +2,12 @@ import ContactForm from "./ContactForm"
 import NotificationPanel from "../../components/notificationPanel"
 import urban_logo from '../../styles/images/urban-discount-logo.svg'
 import twitter_icon from '../../styles/images/twitter-icon.svg'
+import facebook_icon from '../../styles/images/facebook-icon.png'
 import instagram_icon from '../../styles/images/instagram-icon.svg'
 import uraban_shoping from '../../styles/images/shoping-icon.svg'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store'
 import CountDown from "./Countdown"
-import { sm, md} from '../../constants/responsive'
 
 
 export default function Home() {
@@ -15,8 +15,9 @@ export default function Home() {
   const { notificationPanel } = useSelector((state: RootState) => state)
   const { message, show, type } = notificationPanel
 
-  const instagramUrl = 'https://www.instagram.com/your_instagram_username/'
+  const instagramUrl = 'https://www.instagram.com/urbandiscounts_/'
   const twitterUrl = 'https://x.com/myurbandiscount?t=npUOReTsLqS37-97Fi254g&s=09'
+  const facebookUrl = 'https://www.facebook.com/profile.php?id=61552199879667'
 
   return (
     <main className="home-page-container">
@@ -33,15 +34,15 @@ export default function Home() {
               height={100}
             />
           </div>
-          <div className="home-items-container__coming-soon-ctn">
+          {/* <div className="home-items-container__coming-soon-ctn">
             <p className="">coming soon</p>
-          </div>
+          </div> */}
           <div className="home-items-container__header-text-ctn">
-            <span>Hassle-Free discounts: The Best Deals In Town!</span>
+            <span>All about deals & discounts</span>
           </div>
           <div className="home-items-container__content-ctn">
             <span>
-              Tired of the market hustle and not knowing what deals to expect? Well, Urban Discounts has your back! Just sign up, be the first to know when we launch, and trust me, we've got some fantastic coupons lined up just for you. Let's make your shopping experience a breeze!
+               Imagine having access to exclusive discounts on your everyday essentials. Urban Discounts is your personal shopping companion, dedicated to uncovering the most remarkable deals on your everyday essentials, bringing them straight to you, hassle-free!
             </span>
           </div>
             <div className="home-page-contact-form">
@@ -54,16 +55,23 @@ export default function Home() {
                 <img 
                   src={twitter_icon} 
                   alt="urban-discount-twitter" 
-                  width={24} 
-                  height={24}/>
+                  width={23} 
+                  height={23}/>
               </a>
-              {/* <div>
+              <a href={instagramUrl} target="_blank" rel="noopener noreferrer">
                 <img 
                   src={instagram_icon} 
                   alt="urban-discount-twitter" 
                   width={24} height={24}
                 />
-              </div> */}
+              </a>
+              <a href={facebookUrl} target="_blank" rel="noopener noreferrer">
+                <img 
+                  src={facebook_icon} 
+                  alt="urban-discount-twitter" 
+                  width={26} height={26}
+                />
+              </a>
             </div>
         </div>
         <div className="right-side-image-container">
