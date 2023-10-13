@@ -8,10 +8,13 @@ import uraban_shoping from '../../styles/images/shoping-icon.svg'
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store'
 import CountDown from "./Countdown"
+import PrimaryButton from "../../components/button"
+import { useNavigate } from 'react-router-dom'
+import AuthContainer from "../authContainer"
 
 
 export default function Home() {
-  
+  const navigate = useNavigate()
   const { notificationPanel } = useSelector((state: RootState) => state)
   const { message, show, type } = notificationPanel
 
@@ -19,14 +22,18 @@ export default function Home() {
   const twitterUrl = 'https://x.com/myurbandiscount?t=npUOReTsLqS37-97Fi254g&s=09'
   const facebookUrl = 'https://www.facebook.com/profile.php?id=61552199879667'
 
+  const handleAdminPanel = () => {
+    navigate('/admin/login')
+  }
+
   return (
-    <main className="home-page-container">
+    <AuthContainer >
       {show && (
           <NotificationPanel message={message} type={type} />
         )}
-      <div className="flex flex-row justify-between bg-white h-full home-items-container">
-        <div className="left-section-container">
-          <div className="home-items-container__logo">
+      <div className="home-items-container">
+        <div className="header-section">
+        <div className="home-items-container__logo">
             <img 
               alt="urban-discount-logo"
               src={urban_logo}
@@ -34,6 +41,12 @@ export default function Home() {
               height={100}
             />
           </div>
+          <div>
+            <PrimaryButton label="Admin panel" onClick={handleAdminPanel}/>
+          </div>
+        </div>
+        <div className="content">
+        <div className="left-section-container">
           {/* <div className="home-items-container__coming-soon-ctn">
             <p className="">coming soon</p>
           </div> */}
@@ -82,7 +95,8 @@ export default function Home() {
             height={500}
           />
         </div>
+        </div>
       </div>
-    </main>
+    </AuthContainer>
   )
 }

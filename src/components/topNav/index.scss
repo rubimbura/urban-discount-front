@@ -1,0 +1,41 @@
+
+
+.notification-profile-container{
+  padding: 24px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 24px;
+  align-items: center;
+  .profile-ctn{
+    display: flex;
+    gap: 12px;
+    .profile-pic{
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      align-items: center;
+      background-color: #fff;
+    }
+    .name-ctn{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      .name{
+        display: flex;
+        flex-direction: column;
+      }
+      .key{
+        color: #2A2F4E;
+        font-family: 14px;
+      }
+      .value{
+        font-family: 12px;
+        color: #656B80;
+      }
+    }
+  }
+}
