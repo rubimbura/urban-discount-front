@@ -1,7 +1,7 @@
 import DataTable from "../../components/dataTable"
 
 
-const Orders = () => {
+const Warehouse = () => {
   return(
     <div className="page-content-container">
       <div className="dashboard-container">
@@ -14,4 +14,4 @@ const Orders = () => {
     </div>
   )
 }
-export default Orders
+export default Warehouse

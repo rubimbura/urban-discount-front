@@ -42,7 +42,8 @@ export default function Home() {
             />
           </div>
           <div>
-            <PrimaryButton label="Admin panel" onClick={handleAdminPanel}/>
+            {/* <PrimaryButton label="Admin panel" onClick={handleAdminPanel}/> */}
+            <span></span>
           </div>
         </div>
         <div className="content">
